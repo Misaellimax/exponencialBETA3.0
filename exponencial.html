@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Gráfico Exponencial</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="exponencialFRONT.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Painel Gráfico Exponencial</h2>
+        <p style="font-size: 14px; text-align: center;">Expressão: A^(B * X + C) + D</p>
+        <div class="grid-container">
+            <label for="a">Valor de A (maior que 0 e diferente de 1):</label>
+            <input type="number" id="a" min="0.01" step="0.01" value="2">
+            <span></span>
+
+            <label for="b">Valor de B (diferente de 0):</label>
+            <input type="number" id="b" step="0.01" value="1">
+            <span></span>
+
+            <label for="c">Valor de C:</label>
+            <input type="number" id="c" step="0.01" value="0">
+            <div class="radio-group">
+                <label><input type="radio" name="cSign" value="+" checked> + </label>
+                <label><input type="radio" name="cSign" value="-"> - </label>
+            </div>
+
+            <label for="d">Valor de D:</label>
+            <input type="number" id="d" step="0.01" value="0">
+            <div class="radio-group">
+                <label><input type="radio" name="dSign" value="+" checked> + </label>
+                <label><input type="radio" name="dSign" value="-"> - </label>
+            </div>
+
+            <label for="xMin">x min:</label>
+            <input type="number" id="xMin" value="-2" step="0.1">
+            <span></span>
+
+            <label for="xMax">x max:</label>
+            <input type="number" id="xMax" value="2" step="0.1">
+            <span></span>
+
+            <label>Cor da linha:</label>
+            <input type="color" id="lineColor" value="#0000ff">
+            <span></span>
+
+            <label>Largura:</label>
+            <input type="range" id="lineWidth" min="1" max="5" step="1" value="2">
+            <span></span>
+
+            <button id="plotButton">Gerar Gráfico</button>
+        </div>
+        <canvas id="chart"></canvas>
+    </div>
+    <script src="exponencialBACK.js"></script>
+</body>
+</html>
